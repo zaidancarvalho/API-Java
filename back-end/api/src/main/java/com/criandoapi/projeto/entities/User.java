@@ -1,6 +1,5 @@
 package com.criandoapi.projeto.entities;
 
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,31 +12,18 @@ public class User {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
 	private Integer id;
-	
-	@Column(name = "nome_completo")
 	private String name;
-	
-	@Column(name = "username")
-	private String username;
-	
-	@Column(name = "email", unique = true)
 	private String email;
-	
-	@Column(name = "senha")
 	private String password;
-	
-	@Column(name = "telefone")
 	private String telephone;
 
 	public User() {
 	}
 	
-	public User(Integer id, String name, String username, String email, String password, String telephone) {
+	public User(Integer id, String name, String email, String password, String telephone) {
 		this.id = id;
 		this.name = name;
-		this.username = username;
 		this.email = email;
 		this.password = password;
 		this.telephone = telephone;
@@ -57,14 +43,6 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-	
-	public String getUsername() {
-		return username;
-	}
-	
-	public void setUsername(String username) {
-		this.username = username;
 	}
 
 	public String getEmail() {
